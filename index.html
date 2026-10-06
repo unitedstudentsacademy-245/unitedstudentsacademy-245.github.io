@@ -166,7 +166,7 @@
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 1150px;
       margin: auto;
     }
 
@@ -226,7 +226,7 @@
 
     .course-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
       gap: 22px;
     }
 
@@ -237,6 +237,9 @@
       box-shadow: 0 5px 20px rgba(0,0,0,0.07);
       transition: 0.3s;
       border-top: 4px solid #0b1f3a;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .course:hover {
@@ -251,11 +254,25 @@
     .course h3 {
       color: #0b1f3a;
       margin-bottom: 8px;
+      font-size: 19px;
     }
 
     .course p {
       color: #6b7280;
       font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .course-enroll-link {
+      display: inline-block;
+      margin-top: 10px;
+      color: #164e8a;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .course-enroll-link:hover {
+      color: #f4b400;
     }
 
     /* WHY US */
@@ -291,6 +308,7 @@
       font-size: 13px;
       color: #6b7280;
     }
+
     /* EXAM ROUTINE */
     .exam-routine {
       background: #f1f5f9;
@@ -596,12 +614,12 @@
       <div class="menu-btn" onclick="toggleMenu()">☰</div>
 
       <nav id="navMenu">
-  <a href="#home" onclick="closeMenu()">Home</a>
-  <a href="#about" onclick="closeMenu()">About</a>
-  <a href="#courses" onclick="closeMenu()">Courses</a>
-  <a href="#exam-routine" onclick="closeMenu()">Exam Routine</a>
-  <a href="#admission" onclick="closeMenu()">Admission</a>
-  <a href="#contact" onclick="closeMenu()">Contact</a>
+        <a href="#home" onclick="closeMenu()">Home</a>
+        <a href="#about" onclick="closeMenu()">About</a>
+        <a href="#courses" onclick="closeMenu()">Courses</a>
+        <a href="#exam-routine" onclick="closeMenu()">Exam Routine</a>
+        <a href="#admission" onclick="closeMenu()">Admission</a>
+        <a href="#contact" onclick="closeMenu()">Contact</a>
       </nav>
 
     </div>
@@ -684,70 +702,172 @@
   </section>
 
 
-  <!-- COURSES -->
+  <!-- COURSES (ALPHABETICAL ORDER) -->
   <section class="courses" id="courses">
 
     <div class="container">
 
       <div class="section-title">
-        <h2>Our Courses</h2>
+        <h2>Our Offered Courses</h2>
         <p>Programs designed for academic and personal growth.</p>
       </div>
 
       <div class="course-grid">
 
+        <!-- 1. Abacus -->
         <div class="course">
-          <div class="course-icon">📖</div>
-          <h3>Academic Support</h3>
-          <p>
-            Structured academic guidance and subject support
-            for school students.
-          </p>
+          <div>
+            <div class="course-icon">🧮</div>
+            <h3>Abacus</h3>
+            <p>
+              Enhance mental calculation speed, concentration, memory power, and cognitive agility for young learners.
+            </p>
+          </div>
+          <a href="#admission" class="course-enroll-link">Enroll Now →</a>
         </div>
 
+        <!-- 2. Academic Support -->
         <div class="course">
-          <div class="course-icon">🗣️</div>
-          <h3>Spoken English</h3>
-          <p>
-            Improve everyday English speaking, pronunciation,
-            vocabulary and confidence.
-          </p>
+          <div>
+            <div class="course-icon">📖</div>
+            <h3>Academic Support</h3>
+            <p>
+              Structured academic guidance and comprehensive subject support for school students across all grade levels.
+            </p>
+          </div>
+          <a href="#admission" class="course-enroll-link">Enroll Now →</a>
         </div>
 
+        <!-- 3. Dance -->
         <div class="course">
-          <div class="course-icon">✍️</div>
-          <h3>English Grammar</h3>
-          <p>
-            Learn grammar from basic concepts to advanced
-            sentence construction.
-          </p>
+          <div>
+            <div class="course-icon">💃</div>
+            <h3>Dance Classes</h3>
+            <p>
+              Fun and interactive training in classical and contemporary dance forms for physical agility and artistic expression.
+            </p>
+          </div>
+          <a href="#admission" class="course-enroll-link">Enroll Now →</a>
         </div>
 
+        <!-- 4. English Grammar -->
         <div class="course">
-          <div class="course-icon">📚</div>
-          <h3>English Literature</h3>
-          <p>
-            Develop better understanding of poetry, prose,
-            drama and literary texts.
-          </p>
+          <div>
+            <div class="course-icon">✍️</div>
+            <h3>English Grammar</h3>
+            <p>
+              Learn fundamental to advanced grammar concepts, punctuation rules, and accurate sentence construction.
+            </p>
+          </div>
+          <a href="#admission" class="course-enroll-link">Enroll Now →</a>
         </div>
 
+        <!-- 5. English Literature -->
         <div class="course">
-          <div class="course-icon">🎯</div>
-          <h3>Exam Preparation</h3>
-          <p>
-            Focused preparation, practice and guidance to
-            improve examination performance.
-          </p>
+          <div>
+            <div class="course-icon">📚</div>
+            <h3>English Literature</h3>
+            <p>
+              Develop a deep understanding and appreciation of poetry, prose, drama, analysis, and prescribed literary texts.
+            </p>
+          </div>
+          <a href="#admission" class="course-enroll-link">Enroll Now →</a>
         </div>
 
+        <!-- 6. Exam Preparation -->
         <div class="course">
-          <div class="course-icon">💡</div>
-          <h3>Life Skills</h3>
-          <p>
-            Communication, confidence, discipline, critical
-            thinking and practical skills.
-          </p>
+          <div>
+            <div class="course-icon">🎯</div>
+            <h3>Exam Preparation</h3>
+            <p>
+              Focused preparation, mock testing, strategy sessions, and practice routines to maximize examination performance.
+            </p>
+          </div>
+          <a href="#admission" class="course-enroll-link">Enroll Now →</a>
+        </div>
+
+        <!-- 7. Home Tuition Support -->
+        <div class="course">
+          <div>
+            <div class="course-icon">🏠</div>
+            <h3>Home Tuition Support</h3>
+            <p>
+              Dedicated, qualified home tutors offering personalized one-on-one academic attention right at your doorstep.
+            </p>
+          </div>
+          <a href="#admission" class="course-enroll-link">Enroll Now →</a>
+        </div>
+
+        <!-- 8. Life Skills -->
+        <div class="course">
+          <div>
+            <div class="course-icon">💡</div>
+            <h3>Life Skills</h3>
+            <p>
+              Building communication confidence, self-discipline, critical thinking, problem-solving, and practical personal skills.
+            </p>
+          </div>
+          <a href="#admission" class="course-enroll-link">Enroll Now →</a>
+        </div>
+
+        <!-- 9. Spoken English -->
+        <div class="course">
+          <div>
+            <div class="course-icon">🗣️</div>
+            <h3>Spoken English</h3>
+            <p>
+              Improve everyday English speaking, pronunciation, vocabulary expansion, active listening, and public speaking.
+            </p>
+          </div>
+          <a href="#admission" class="course-enroll-link">Enroll Now →</a>
+        </div>
+
+        <!-- 10. Tuition Support (Bengali) -->
+        <div class="course">
+          <div>
+            <div class="course-icon">📝</div>
+            <h3>Tuition Support (Bengali)</h3>
+            <p>
+              Structured subject coaching for Bengali medium students under the WBBSE board syllabus with regular assessments.
+            </p>
+          </div>
+          <a href="#admission" class="course-enroll-link">Enroll Now →</a>
+        </div>
+
+        <!-- 11. Tuition Support (English) -->
+        <div class="course">
+          <div>
+            <div class="course-icon">🏫</div>
+            <h3>Tuition Support (English)</h3>
+            <p>
+              Comprehensive subject tuition for CBSE / CISCE / English medium students prioritizing concept clarity.
+            </p>
+          </div>
+          <a href="#admission" class="course-enroll-link">Enroll Now →</a>
+        </div>
+
+        <!-- 12. Vedic Math -->
+        <div class="course">
+          <div>
+            <div class="course-icon">🔢</div>
+            <h3>Vedic Math</h3>
+            <p>
+              Master high-speed mental math tricks, formulas, and calculation shortcuts to solve complex problems rapidly.
+            </p>
+          </div>
+          <a href="#admission" class="course-enroll-link">Enroll Now →</a>
+        </div>
+
+        <!-- 13. Yoga -->
+        <div class="course">
+          <div>
+            <div class="course-icon">🧘</div>
+            <h3>Yoga Classes</h3>
+            <p>
+              Guided physical postures, breathing exercises, and mindfulness techniques to boost focus, stamina, and mental health.
+            </p>
+          </div>
+          <a href="#admission" class="course-enroll-link">Enroll Now →</a>
         </div>
 
       </div>
@@ -800,7 +920,7 @@
   </section>
 
 
-    <!-- EXAM ROUTINE -->
+  <!-- EXAM ROUTINE -->
   <section class="exam-routine" id="exam-routine">
 
     <div class="container">
@@ -959,21 +1079,20 @@
             <label>Course Interested In *</label>
 
             <select id="course" required>
-
               <option value="">Select a course</option>
-
+              <option>Abacus</option>
               <option>Academic Support</option>
-
-              <option>Spoken English</option>
-
+              <option>Dance</option>
               <option>English Grammar</option>
-
               <option>English Literature</option>
-
               <option>Exam Preparation</option>
-
+              <option>Home Tuition Support</option>
               <option>Life Skills</option>
-
+              <option>Spoken English</option>
+              <option>Tuition Support (Bengali)</option>
+              <option>Tuition Support (English)</option>
+              <option>Vedic Math</option>
+              <option>Yoga</option>
             </select>
 
           </div>
@@ -1017,46 +1136,31 @@
       <div class="contact-grid">
 
         <div class="contact-card">
-
           <div class="icon">📧</div>
-
           <h3>Email</h3>
-
           <p>
             <a href="mailto:unitedstudentsacademy@gmail.com">
               unitedstudentsacademy@gmail.com
             </a>
           </p>
-
         </div>
 
+        <div class="contact-card">
+          <div class="icon">📞</div>
+          <h3>Phone / WhatsApp</h3>
+          <p>
+            <a href="tel:9474439331">+91 94744 39331</a> / 
+            <a href="tel:8337878040">+91 83378 78040</a>
+          </p>
+        </div>
 
         <div class="contact-card">
-
           <div class="icon">📍</div>
-
-          <h3>Location</h3>
-
+          <h3>Address</h3>
           <p>
-            United Students Academy<br>
-            Khalitpur, Petrapole<br>
-            Bongaon, West Bengal
+            Jayantipur Bazar / Khalitpur Center,<br>
+            Petrapole, West Bengal
           </p>
-
-        </div>
-
-
-        <div class="contact-card">
-
-          <div class="icon">🎓</div>
-
-          <h3>Admissions</h3>
-
-          <p>
-            Admissions are open.<br>
-            Monthly Fee: ₹1,000
-          </p>
-
         </div>
 
       </div>
@@ -1070,119 +1174,24 @@
   <footer>
 
     <h3>United Students Academy</h3>
-
-    <p>
-      Learn • Grow • Succeed
-    </p>
-
-    <p>
-      Quality Education for a Better Future
-    </p>
+    <p>Empowering minds through education and skill-building.</p>
 
     <div class="copyright">
-      © <span id="year"></span> United Students Academy.
-      All Rights Reserved.
+      &copy; 2026 United Students Academy. All rights reserved.
     </div>
 
   </footer>
 
-
   <script>
-
-    /* MOBILE MENU */
-
     function toggleMenu() {
-
-      document
-        .getElementById("navMenu")
-        .classList.toggle("active");
-
+      const nav = document.getElementById('navMenu');
+      nav.classList.toggle('active');
     }
-
 
     function closeMenu() {
-
-      document
-        .getElementById("navMenu")
-        .classList.remove("active");
-
+      const nav = document.getElementById('navMenu');
+      nav.classList.remove('active');
     }
-
-
-    /* CURRENT YEAR */
-
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-
-
-    /* ADMISSION FORM */
-
-    document
-      .getElementById("admissionForm")
-      .addEventListener("submit", function(event) {
-
-        event.preventDefault();
-
-        const studentName =
-          document.getElementById("studentName").value;
-
-        const studentClass =
-          document.getElementById("studentClass").value;
-
-        const parentName =
-          document.getElementById("parentName").value;
-
-        const phone =
-          document.getElementById("phone").value;
-
-        const email =
-          document.getElementById("email").value;
-
-        const course =
-          document.getElementById("course").value;
-
-        const address =
-          document.getElementById("address").value;
-
-
-        const subject =
-          "New Admission Application - " + studentName;
-
-
-        const body =
-          "UNITED STUDENTS ACADEMY%0D%0A%0D%0A" +
-
-          "Student Name: " +
-          encodeURIComponent(studentName) +
-
-          "%0D%0AClass: " +
-          encodeURIComponent(studentClass) +
-
-          "%0D%0AParent/Guardian: " +
-          encodeURIComponent(parentName) +
-
-          "%0D%0APhone: " +
-          encodeURIComponent(phone) +
-
-          "%0D%0AEmail: " +
-          encodeURIComponent(email) +
-
-          "%0D%0ACourse: " +
-          encodeURIComponent(course) +
-
-          "%0D%0AAddress: " +
-          encodeURIComponent(address);
-
-
-        window.location.href =
-          "mailto:unitedstudentsacademy@gmail.com" +
-          "?subject=" +
-          encodeURIComponent(subject) +
-          "&body=" +
-          body;
-
-      });
-
   </script>
 
 </body>
