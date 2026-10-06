@@ -6,7 +6,14 @@
 
   <title>United Students Academy | Learn. Grow. Succeed.</title>
 
-  <meta name="description" content="United Students Academy provides quality education, English language training, academic support and skill development for students.">
+  <meta name="description" content="United Students Academy provides quality education, English language training, academic support, and skill development for students in Jayantipur and Khalitpur.">
+
+  <!-- OPENGRAPH META TAGS (For rich previews when sharing link on WhatsApp / Social Media) -->
+  <meta property="og:title" content="United Students Academy | Learn. Grow. Succeed.">
+  <meta property="og:description" content="Quality education, Spoken English, academic tuition (WBBSE/CBSE), and skill development at Jayantipur Bazar & Khalitpur.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://unitedstudentsacademy-245.github.io">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=1200&auto=format&fit=crop&q=80">
 
   <style>
     * {
@@ -26,6 +33,20 @@
     a {
       text-decoration: none;
       color: inherit;
+    }
+
+    /* TOP ANNOUNCEMENT TICKER */
+    .announcement-bar {
+      background: #f4b400;
+      color: #0b1f3a;
+      text-align: center;
+      padding: 8px 15px;
+      font-size: 13px;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
     }
 
     /* HEADER */
@@ -79,7 +100,7 @@
 
     nav {
       display: flex;
-      gap: 22px;
+      gap: 20px;
     }
 
     nav a {
@@ -302,9 +323,62 @@
       color: #f4b400;
     }
 
+    /* CLASSROOM GALLERY */
+    .gallery {
+      background: white;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-card {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      background: #0b1f3a;
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+      opacity: 0.88;
+    }
+
+    .gallery-card:hover img {
+      transform: scale(1.06);
+      opacity: 1;
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(11,31,58,0.95));
+      color: white;
+      padding: 20px 15px 12px;
+    }
+
+    .gallery-caption h4 {
+      font-size: 16px;
+      color: #f4b400;
+    }
+
+    .gallery-caption p {
+      font-size: 12px;
+      color: #d1d5db;
+    }
+
     /* WHY US */
     .why {
-      background: white;
+      background: #f8fafc;
     }
 
     .features {
@@ -316,8 +390,9 @@
     .feature {
       text-align: center;
       padding: 25px 15px;
-      background: #f8fafc;
+      background: white;
       border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
     }
 
     .feature .icon {
@@ -384,7 +459,7 @@
       background: #0b1f3a;
       color: white;
     }
-    
+
     /* FEES */
     .fees {
       background: #0b1f3a;
@@ -415,9 +490,57 @@
       margin-bottom: 25px;
     }
 
+    /* TESTIMONIALS SECTION */
+    .testimonials {
+      background: white;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+    }
+
+    .testimonial-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .stars {
+      color: #f4b400;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .testimonial-card p {
+      color: #4b5563;
+      font-size: 14px;
+      font-style: italic;
+      margin-bottom: 15px;
+    }
+
+    .author {
+      font-weight: bold;
+      color: #0b1f3a;
+      font-size: 14px;
+    }
+
+    .author small {
+      display: block;
+      color: #6b7280;
+      font-weight: normal;
+      font-size: 12px;
+    }
+
     /* FAQ ACCORDION */
     .faq {
-      background: white;
+      background: #f8fafc;
     }
 
     .faq-container {
@@ -426,7 +549,7 @@
     }
 
     .faq-item {
-      background: #f8fafc;
+      background: white;
       border: 1px solid #e2e8f0;
       border-radius: 10px;
       margin-bottom: 14px;
@@ -475,16 +598,17 @@
 
     /* ADMISSION */
     .admission {
-      background: #f8fafc;
+      background: white;
     }
 
     .form-container {
       max-width: 750px;
       margin: auto;
-      background: white;
+      background: #f8fafc;
       padding: 35px;
       border-radius: 14px;
-      box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.05);
     }
 
     .form-group {
@@ -507,6 +631,7 @@
       border-radius: 6px;
       font-size: 15px;
       outline: none;
+      background: white;
     }
 
     .form-group input:focus,
@@ -542,9 +667,9 @@
       background: #20ba5a;
     }
 
-    /* CONTACT */
+    /* CONTACT & GOOGLE MAPS BUTTONS */
     .contact {
-      background: white;
+      background: #f8fafc;
     }
 
     .contact-grid {
@@ -556,8 +681,9 @@
     .contact-card {
       text-align: center;
       padding: 25px;
-      background: #f8fafc;
+      background: white;
       border-radius: 10px;
+      border: 1px solid #e2e8f0;
     }
 
     .contact-card .icon {
@@ -578,6 +704,23 @@
     .contact-card a {
       color: #164e8a;
       font-weight: bold;
+    }
+
+    .map-btn {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 6px 14px;
+      background: #0b1f3a;
+      color: #f4b400 !important;
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+
+    .map-btn:hover {
+      background: #164e8a;
+      color: white !important;
     }
 
     /* FLOATING WHATSAPP BUTTON */
@@ -688,7 +831,7 @@
       .form-row {
         grid-template-columns: 1fr;
       }
-      
+
       .floating-whatsapp span {
         display: none;
       }
@@ -726,6 +869,11 @@
 
 <body>
 
+  <!-- TOP ANNOUNCEMENT TICKER BAR -->
+  <div class="announcement-bar">
+    <span>📢 Admissions Open for 2026–27 Session! | Morning & Afternoon Batches Available | Call/WhatsApp: +91 94744 39331</span>
+  </div>
+
   <!-- HEADER -->
   <header>
     <div class="nav">
@@ -745,7 +893,9 @@
         <a href="#home" onclick="closeMenu()">Home</a>
         <a href="#about" onclick="closeMenu()">About</a>
         <a href="#courses" onclick="closeMenu()">Courses</a>
+        <a href="#gallery" onclick="closeMenu()">Gallery</a>
         <a href="#exam-routine" onclick="closeMenu()">Exam Routine</a>
+        <a href="#testimonials" onclick="closeMenu()">Reviews</a>
         <a href="#faq" onclick="closeMenu()">FAQ</a>
         <a href="#admission" onclick="closeMenu()">Admission</a>
         <a href="#contact" onclick="closeMenu()">Contact</a>
@@ -1014,6 +1164,49 @@
   </section>
 
 
+  <!-- PHOTO / CLASSROOM GALLERY -->
+  <section class="gallery" id="gallery">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Academy Life & Activities</h2>
+        <p>A glimpse into our classrooms, student interactive sessions, and activities.</p>
+      </div>
+
+      <div class="gallery-grid">
+
+        <div class="gallery-card">
+          <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=600&auto=format&fit=crop&q=80" alt="Classroom Interactive Learning">
+          <div class="gallery-caption">
+            <h4>Interactive Classroom Learning</h4>
+            <p>Concept-focused teaching & personalized student interaction.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&auto=format&fit=crop&q=80" alt="Spoken English Practice">
+          <div class="gallery-caption">
+            <h4>Spoken English & Communication</h4>
+            <p>Building fluency and real-world public speaking confidence.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&auto=format&fit=crop&q=80" alt="Academic Exam Preparation">
+          <div class="gallery-caption">
+            <h4>Focused Academic Preparation</h4>
+            <p>Structured exam strategies for WBBSE, CBSE, and CISCE students.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
   <!-- WHY US -->
   <section class="why">
 
@@ -1127,6 +1320,52 @@
   </section>
 
 
+  <!-- TESTIMONIALS SECTION -->
+  <section class="testimonials" id="testimonials">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>What Parents & Students Say</h2>
+        <p>Real feedback from our learning community.</p>
+      </div>
+
+      <div class="testimonial-grid">
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"My son's English speaking confidence improved noticeably within just a few months of guidance at United Students Academy."</p>
+          <div class="author">
+            Parent of Class IX Student
+            <small>Jayantipur Center</small>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"The regular revision routines and exam preparation sessions helped me score high marks in my school terminal examinations."</p>
+          <div class="author">
+            Student (Class X)
+            <small>WBBSE Medium Batch</small>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Proper care and individual attention are given to every student. Very disciplined and polite environment."</p>
+          <div class="author">
+            Parent of Class VI Student
+            <small>Khalitpur Center</small>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
   <!-- FAQ SECTION -->
   <section class="faq" id="faq">
 
@@ -1186,7 +1425,7 @@
   </section>
 
 
-  <!-- ADMISSION FORM (INTERACTIVE WHATSAPP) -->
+  <!-- ADMISSION FORM -->
   <section class="admission" id="admission">
 
     <div class="container">
@@ -1320,7 +1559,7 @@
   </section>
 
 
-  <!-- CONTACT -->
+  <!-- CONTACT & GOOGLE MAPS LINK -->
   <section class="contact" id="contact">
 
     <div class="container">
@@ -1346,17 +1585,21 @@
           <div class="icon">📞</div>
           <h3>Phone / WhatsApp</h3>
           <p>
-            <a href="tel:9474439331">+91 94744 39331</a> / 
-            <a href="tel:8337878040">+91 83378 78040</a>
+            <a href="tel:9474439331">+91 94744 39331</a>
           </p>
         </div>
 
         <div class="contact-card">
           <div class="icon">📍</div>
-          <h3>Address</h3>
+          <h3>Centers & Directions</h3>
           <p>
-            Jayantipur Bazar / Khalitpur Center,<br>
-            Petrapole, West Bengal
+            <strong>Jayantipur Center:</strong> Jayantipur Bazar<br>
+            <a href="https://www.google.com/maps/search/?api=1&query=Jayantipur+Bazar+Petrapole" target="_blank" class="map-btn">📍 Jayantipur Directions</a>
+          </p>
+          <br>
+          <p>
+            <strong>Khalitpur Center:</strong> Khalitpur, Petrapole<br>
+            <a href="https://www.google.com/maps/search/?api=1&query=Khalitpur+Petrapole" target="_blank" class="map-btn">📍 Khalitpur Directions</a>
           </p>
         </div>
 
