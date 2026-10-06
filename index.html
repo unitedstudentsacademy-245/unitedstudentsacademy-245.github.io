@@ -219,6 +219,33 @@
       font-size: 22px;
     }
 
+    /* COURSE FILTERS */
+    .course-filters {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 35px;
+    }
+
+    .filter-btn {
+      padding: 10px 20px;
+      border-radius: 30px;
+      border: 2px solid #0b1f3a;
+      background: white;
+      color: #0b1f3a;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: #0b1f3a;
+      color: #f4b400;
+    }
+
     /* COURSES */
     .courses {
       background: #f8fafc;
@@ -230,19 +257,19 @@
       gap: 22px;
     }
 
-    .course {
+    .course-card-item {
       background: white;
       padding: 28px 22px;
       border-radius: 12px;
       box-shadow: 0 5px 20px rgba(0,0,0,0.07);
-      transition: 0.3s;
+      transition: all 0.3s ease;
       border-top: 4px solid #0b1f3a;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
 
-    .course:hover {
+    .course-card-item:hover {
       transform: translateY(-5px);
     }
 
@@ -251,13 +278,13 @@
       margin-bottom: 12px;
     }
 
-    .course h3 {
+    .course-card-item h3 {
       color: #0b1f3a;
       margin-bottom: 8px;
       font-size: 19px;
     }
 
-    .course p {
+    .course-card-item p {
       color: #6b7280;
       font-size: 14px;
       margin-bottom: 15px;
@@ -388,6 +415,64 @@
       margin-bottom: 25px;
     }
 
+    /* FAQ ACCORDION */
+    .faq {
+      background: white;
+    }
+
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      margin-bottom: 14px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 18px 22px;
+      font-weight: bold;
+      color: #0b1f3a;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 16px;
+      transition: background 0.2s;
+    }
+
+    .faq-question:hover {
+      background: #edf2f7;
+    }
+
+    .faq-answer {
+      padding: 0 22px 20px;
+      color: #4b5563;
+      font-size: 14px;
+      display: none;
+      line-height: 1.6;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 15px;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    .faq-toggle-icon {
+      font-size: 18px;
+      font-weight: bold;
+      transition: transform 0.3s;
+    }
+
+    .faq-item.active .faq-toggle-icon {
+      transform: rotate(180deg);
+    }
+
     /* ADMISSION */
     .admission {
       background: #f8fafc;
@@ -439,17 +524,22 @@
     .submit-btn {
       width: 100%;
       border: none;
-      background: #0b1f3a;
+      background: #25d366;
       color: white;
       padding: 14px;
       font-size: 16px;
       font-weight: bold;
       border-radius: 7px;
       cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s;
     }
 
     .submit-btn:hover {
-      background: #163d6c;
+      background: #20ba5a;
     }
 
     /* CONTACT */
@@ -490,6 +580,36 @@
       font-weight: bold;
     }
 
+    /* FLOATING WHATSAPP BUTTON */
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50px;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 18px rgba(37, 211, 102, 0.4);
+      z-index: 10000;
+      font-weight: bold;
+      font-size: 14px;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .floating-whatsapp:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+      color: white;
+    }
+
+    .whatsapp-icon {
+      font-size: 20px;
+    }
+
     /* FOOTER */
     footer {
       background: #071426;
@@ -515,9 +635,8 @@
       color: #6b7280;
     }
 
-    /* MOBILE */
+    /* MOBILE RESPONSIVE */
     @media (max-width: 800px) {
-
       nav {
         display: none;
         position: absolute;
@@ -569,6 +688,15 @@
       .form-row {
         grid-template-columns: 1fr;
       }
+      
+      .floating-whatsapp span {
+        display: none;
+      }
+
+      .floating-whatsapp {
+        padding: 14px;
+        border-radius: 50%;
+      }
     }
 
     @media (max-width: 450px) {
@@ -618,6 +746,7 @@
         <a href="#about" onclick="closeMenu()">About</a>
         <a href="#courses" onclick="closeMenu()">Courses</a>
         <a href="#exam-routine" onclick="closeMenu()">Exam Routine</a>
+        <a href="#faq" onclick="closeMenu()">FAQ</a>
         <a href="#admission" onclick="closeMenu()">Admission</a>
         <a href="#contact" onclick="closeMenu()">Contact</a>
       </nav>
@@ -702,20 +831,28 @@
   </section>
 
 
-  <!-- COURSES (ALPHABETICAL ORDER) -->
+  <!-- COURSES (WITH FILTER BUTTONS) -->
   <section class="courses" id="courses">
 
     <div class="container">
 
       <div class="section-title">
         <h2>Our Offered Courses</h2>
-        <p>Programs designed for academic and personal growth.</p>
+        <p>Explore programs tailored for academic success and personal skill development.</p>
+      </div>
+
+      <!-- FILTER BUTTONS -->
+      <div class="course-filters">
+        <button class="filter-btn active" onclick="filterCourses('all', this)">All Courses</button>
+        <button class="filter-btn" onclick="filterCourses('academic', this)">Academic Tuition</button>
+        <button class="filter-btn" onclick="filterCourses('language', this)">English & Language</button>
+        <button class="filter-btn" onclick="filterCourses('skills', this)">Skills & Creative</button>
       </div>
 
       <div class="course-grid">
 
         <!-- 1. Abacus -->
-        <div class="course">
+        <div class="course-card-item" data-category="skills">
           <div>
             <div class="course-icon">🧮</div>
             <h3>Abacus</h3>
@@ -727,7 +864,7 @@
         </div>
 
         <!-- 2. Academic Support -->
-        <div class="course">
+        <div class="course-card-item" data-category="academic">
           <div>
             <div class="course-icon">📖</div>
             <h3>Academic Support</h3>
@@ -739,7 +876,7 @@
         </div>
 
         <!-- 3. Dance -->
-        <div class="course">
+        <div class="course-card-item" data-category="skills">
           <div>
             <div class="course-icon">💃</div>
             <h3>Dance Classes</h3>
@@ -751,7 +888,7 @@
         </div>
 
         <!-- 4. English Grammar -->
-        <div class="course">
+        <div class="course-card-item" data-category="language">
           <div>
             <div class="course-icon">✍️</div>
             <h3>English Grammar</h3>
@@ -763,7 +900,7 @@
         </div>
 
         <!-- 5. English Literature -->
-        <div class="course">
+        <div class="course-card-item" data-category="language">
           <div>
             <div class="course-icon">📚</div>
             <h3>English Literature</h3>
@@ -775,7 +912,7 @@
         </div>
 
         <!-- 6. Exam Preparation -->
-        <div class="course">
+        <div class="course-card-item" data-category="academic">
           <div>
             <div class="course-icon">🎯</div>
             <h3>Exam Preparation</h3>
@@ -787,7 +924,7 @@
         </div>
 
         <!-- 7. Home Tuition Support -->
-        <div class="course">
+        <div class="course-card-item" data-category="academic">
           <div>
             <div class="course-icon">🏠</div>
             <h3>Home Tuition Support</h3>
@@ -799,7 +936,7 @@
         </div>
 
         <!-- 8. Life Skills -->
-        <div class="course">
+        <div class="course-card-item" data-category="skills">
           <div>
             <div class="course-icon">💡</div>
             <h3>Life Skills</h3>
@@ -811,7 +948,7 @@
         </div>
 
         <!-- 9. Spoken English -->
-        <div class="course">
+        <div class="course-card-item" data-category="language">
           <div>
             <div class="course-icon">🗣️</div>
             <h3>Spoken English</h3>
@@ -823,7 +960,7 @@
         </div>
 
         <!-- 10. Tuition Support (Bengali) -->
-        <div class="course">
+        <div class="course-card-item" data-category="academic">
           <div>
             <div class="course-icon">📝</div>
             <h3>Tuition Support (Bengali)</h3>
@@ -835,7 +972,7 @@
         </div>
 
         <!-- 11. Tuition Support (English) -->
-        <div class="course">
+        <div class="course-card-item" data-category="academic">
           <div>
             <div class="course-icon">🏫</div>
             <h3>Tuition Support (English)</h3>
@@ -847,7 +984,7 @@
         </div>
 
         <!-- 12. Vedic Math -->
-        <div class="course">
+        <div class="course-card-item" data-category="skills">
           <div>
             <div class="course-icon">🔢</div>
             <h3>Vedic Math</h3>
@@ -859,7 +996,7 @@
         </div>
 
         <!-- 13. Yoga -->
-        <div class="course">
+        <div class="course-card-item" data-category="skills">
           <div>
             <div class="course-icon">🧘</div>
             <h3>Yoga Classes</h3>
@@ -965,6 +1102,7 @@
 
   </section>
 
+
   <!-- FEES -->
   <section class="fees">
 
@@ -989,14 +1127,73 @@
   </section>
 
 
-  <!-- ADMISSION -->
+  <!-- FAQ SECTION -->
+  <section class="faq" id="faq">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Frequently Asked Questions</h2>
+        <p>Quick answers to common questions from parents and students.</p>
+      </div>
+
+      <div class="faq-container">
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            What are the batch timings for Bengali and English Medium tuition?
+            <span class="faq-toggle-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            Bengali Medium (WBBSE) tuition batches run in the morning from <strong>6:30 AM – 9:30 AM</strong>, while English Medium (CBSE / CISCE) batches take place in the afternoon from <strong>4:30 PM – 7:30 PM</strong>.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Do you offer Home Tuition support?
+            <span class="faq-toggle-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            Yes, we provide reliable and qualified home tutors for individual, one-on-one academic support around Jayantipur, Khalitpur, Petrapole, and neighboring areas.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            How do I register for co-curricular activities like Abacus, Dance, or Yoga?
+            <span class="faq-toggle-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            You can select your desired course in the Admission Form below or click the WhatsApp button to inform us directly. We will provide class schedules and batch allocations.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            Where are the United Students Academy centers located?
+            <span class="faq-toggle-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            Our primary learning centers operate at Jayantipur Bazar and Khalitpur, near Petrapole, West Bengal.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ADMISSION FORM (INTERACTIVE WHATSAPP) -->
   <section class="admission" id="admission">
 
     <div class="container">
 
       <div class="section-title">
         <h2>Admission Form</h2>
-        <p>Fill in your details to apply for admission.</p>
+        <p>Fill in your details below to send an instant application via WhatsApp.</p>
       </div>
 
       <div class="form-container">
@@ -1111,7 +1308,7 @@
 
 
           <button type="submit" class="submit-btn">
-            Submit Admission Application
+            💬 Submit via WhatsApp
           </button>
 
         </form>
@@ -1170,6 +1367,17 @@
   </section>
 
 
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a
+    href="https://wa.me/919474439331?text=Hi,%20I%20have%20an%20inquiry%20about%20United%20Students%20Academy"
+    target="_blank"
+    class="floating-whatsapp"
+    title="Chat with us on WhatsApp">
+    <span class="whatsapp-icon">💬</span>
+    <span>Chat with Us</span>
+  </a>
+
+
   <!-- FOOTER -->
   <footer>
 
@@ -1182,7 +1390,9 @@
 
   </footer>
 
+  <!-- JAVASCRIPT LOGIC -->
   <script>
+    // Navigation Menu Toggle
     function toggleMenu() {
       const nav = document.getElementById('navMenu');
       nav.classList.toggle('active');
@@ -1192,6 +1402,53 @@
       const nav = document.getElementById('navMenu');
       nav.classList.remove('active');
     }
+
+    // Course Category Filtering
+    function filterCourses(category, btnElement) {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      filterBtns.forEach(btn => btn.classList.remove('active'));
+      btnElement.classList.add('active');
+
+      const courseCards = document.querySelectorAll('.course-card-item');
+      courseCards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // FAQ Accordion Toggle
+    function toggleFaq(element) {
+      const item = element.parentElement;
+      item.classList.toggle('active');
+    }
+
+    // WhatsApp Admission Form Submission
+    document.getElementById('admissionForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('studentName').value;
+      const cls = document.getElementById('studentClass').value;
+      const parent = document.getElementById('parentName').value;
+      const phone = document.getElementById('phone').value;
+      const email = document.getElementById('email').value || 'Not provided';
+      const course = document.getElementById('course').value;
+      const address = document.getElementById('address').value || 'Not provided';
+
+      const message = `*New Admission Application - United Students Academy*%0A%0A` +
+        `*Student Name:* ${encodeURIComponent(name)}%0A` +
+        `*Class:* ${encodeURIComponent(cls)}%0A` +
+        `*Parent Name:* ${encodeURIComponent(parent)}%0A` +
+        `*Phone:* ${encodeURIComponent(phone)}%0A` +
+        `*Email:* ${encodeURIComponent(email)}%0A` +
+        `*Course Interested:* ${encodeURIComponent(course)}%0A` +
+        `*Address:* ${encodeURIComponent(address)}`;
+
+      const whatsappURL = `https://wa.me/919474439331?text=${message}`;
+      window.open(whatsappURL, '_blank');
+    });
   </script>
 
 </body>
